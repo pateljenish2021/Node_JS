@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coachina - Webflow Ecommerce website template</title>
+
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <link rel="icon" href="public/icon.png"/> 
+    <link rel="stylesheet" type="text/css" href="public/all.min.css"/>
+    <link rel="stylesheet" type="text/css" href="public/fonts.css"/>
+    <link rel="stylesheet" type="text/css" href="public/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="public/style.css"/>
+    <link rel="stylesheet" type="text/css" href="public/responsive.css"/>
+
+</head>
+
+<!-- https://coachina-template.webflow.io/ --> 
+
+<body>
+
+    <!-- ==================== Header ===================== -->
+
+    <header class="navbar navbar-expand-lg">
+        <div class="container">
+            <a href="index.html"><img class="coachina-logo" src="public/logo.png" alt="coachina" title="coachina" width="165px"></a>
+            <button class="navbar-toggler" data-bs-target="#hidden" data-bs-toggle="collapse">
+                <span class="fa-solid fa-bars-staggered btn-outline-light"></span>
+            </button>
+            <nav class="navbar-collapse collapse" id="hidden">
+                <div class="coachina-header d-flex justify-content-lg-between align-items-center w-100">
+                    <div class="header-center">
+                        <ul class="navbar-nav list-unstyled">
+                            <li><a class="active" href="/">Home</a></li>
+                            <li><a href="/about">About</a></li>
+                            <li><a href="/news">News</a></li>
+                            <li class="pe-0"><a href="/contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="header-right">
+                <div class="btn">
+                    <a href="javascript:void(0);">Get a Consultation</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ======= Banner ======= -->
+
+    <section class="banner">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12">
+                    <div class="banner-data heading">
+                        <p>MAKE YOUR PASSION COME TRUE</p>
+                        <h1>Elevate your business <span>heights</span></h1>
+                        <h4>Envision a fulfilling career where you pursue your passion,<span> aiding others in their personal.</span></h4>
+                    </div>
+                    <div class="banner-btn">
+                        <span class="text-underline">Work with me Today</span>
+                        <a href="tel:+91 812-860-7046"><i class="fa-solid fa-phone text-center"></i>+91 812 860 7046</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="banner-img">
+                        <img src="public/banner-img.jpg" alt="member" title="member"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== Features ================= -->
+
+    <section class="features">
+        <div class="container">
+            <div class="feature-bg">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card m-md-0 tran-card text-center d-flex flex-column align-items-center">
+                            <img src="public/transition.png" alt="transition" title="transition"/>
+                            <h3>Career transition</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit suspendi.</p>
+                            <span class="text-underline">Learn More</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card m-md-0 career-card text-center d-flex flex-column align-items-center">
+                            <img src="public/grow.png" alt="grow" title="grow"/>
+                            <h3>Career development</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit suspendi.</p>
+                            <span class="text-underline">Learn More</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card m-md-0 coun-card text-center d-flex flex-column align-items-center">
+                            <img src="public/comment.png" alt="message" title="message"/>
+                            <h3>Counseling</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit suspendi.</p>
+                            <span class="text-underline">Learn More</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========== Register =========== -->
+
+    <section class="register pt-md-0">
+        <div class="custom-container">
+            <div class="row justify-content-between">
+                <div class="col-lg-6 col-md-12 d-flex flex-column justify-content-center">
+                    <div>
+                        <div class="reg-content heading d-flex align-items-center text-center flex-column">
+                            <h3>"At the heart of Coachina is our commitment to top-tier career guidance."</h3>
+                            <img src="public/cofounder.jpg" alt="co-founder" title="co-founder"/>
+                            <h5>Carson Foster</h5>
+                            <p>CO FOUNDER</p>
+                            <img src="public/sign.png" alt="sign" title="sign"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-12">
+                    <div class="reg-form mt-md-5 w-100">
+                        <div class="form-heading heading">
+                            <p>REGISTER TODAY</p>
+                            <h4>A fulfilling career that ignites your <span>passion awaits you.</span></h4>
+                        </div>
+                        <form>
+                            <div class="form-data">
+                                <label>Select class</label>
+                                <select>
+                                    <option selected disabled>Select class you're intrested</option>
+                                    <option>First Choice</option>
+                                    <option>Second Choice</option>
+                                    <option>Third Choice</option>
+                                </select>
+                            </div>
+                            <div class="form-data">
+                                <label>Name</label>
+                                <input type="text" placeholder="John Doe" required/>
+                            </div>
+                            <div class="form-data">
+                                <label>email</label>
+                                <input type="email" placeholder="Contact@email.com" required/>
+                            </div>
+                            <div class="form-data">
+                                <label>phone</label>
+                                <input type="tel" placeholder="+1 345-678" pattern="[0-9]{10}" required/>
+                            </div>
+                            <div class="form-data">
+                                <label>message</label>
+                                <textarea rows="4" placeholder="Additional requests"></textarea>
+                            </div>
+                            <button class="form-btn" type="submit">Get in Touch</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========= logo =============== -->
+
+    <section class="brands">
+        <div class="custom-container">
+            <div class="logo-slider">
+                <marquee behavior="alternate"  scrollamount="2">
+                    <img src="public/terra.svg" alt="terra" title="terra" style="width: 95px;"/>
+                    <img src="public/iceberg.svg" alt="iceberg" title="iceberg" style="width: 110px;"/>
+                    <img src="public/cactus.svg" alt="cactus" title="cactus" style="width: 130px;"/>
+                    <img src="public/robot.svg" alt="robot" title="robot" style="width: 120px;"/>
+                    <img src="public/rise.svg" alt="rise" title="rise" style="width: 100px;"/>
+                    <img src="public/iceberg.svg" alt="iceberg" title="iceberg" style="width: 110px;"/>
+                    <img src="public/terra.svg" alt="terra" title="terra" style="width: 95px;"/>
+                    <img src="public/robot.svg" alt="robot" title="robot" style="width: 120px;"/>
+                    <img src="public/iceberg.svg" alt="iceberg" title="iceberg" style="width: 110px;"/>
+                </marquee>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========= achievement ======== -->
+
+    <section class="achievement">
+        <div class="container">
+            <div class="achiev-heading heading">
+                <h4>Design effortlessly by leveraging our myriad of modular sections. <span>For streamlined navigation, we've categorized each section thoughtfully.</span></h4>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="achiev-number">
+                        <h2>99%</h2>
+                        <p>Client satisfaction</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="achiev-number">
+                        <h2>10</h2>
+                        <p>Certificates andawards</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="achiev-number">
+                        <h2>570</h2>
+                        <p>Clients worldwide</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="achiev-number">
+                        <h2>17</h2>
+                        <p>Years of experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========== Result =========  -->
+    <section class="result">
+        <div class="container">
+            <div class="result-box">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="result-heading heading">
+                            <img src="public/terra.svg" alt="terra" title="terra"/>
+                            <h3>“The results spoke for themselves, and I was all in.”</h3>
+                            <div class="btn">
+                                <a href="javascript:void(0);">Read Story</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="result-img"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= Future ========= -->
+    <section class="future">
+        <div class="container">
+            <div class="future-data">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="future-left heading">
+                            <h3>Illuminate your future with our streamlined program.</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="future-right heading">
+                            <h4 class="ms-md-0">Is your current job not aligning with your passions?</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn f-btn">
+                    <a href="javascript:void(0);">Apply for Coaching</a>
+                    <span class="text-underline">Coaching Packages</span>
+                </div>
+            </div>
+            <div class="future-card">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6 mb-md-4">
+                       <div class="f-card ms-md-4">
+                            <h6>step 1</h6>
+                            <h4>Goal setting</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div> 
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 mb-md-4">
+                       <div class="f-card card-space">
+                            <h6>step 2</h6>
+                            <h4>Explore</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div> 
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                       <div class="f-card card-space">
+                            <h6>step 3</h6>
+                            <h4>Discover</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div> 
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                       <div class="f-card border-end-0 card-space">
+                            <h6>step 4</h6>
+                            <h4>Action Plan</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== Services ========= -->
+    <section class="service">
+        <div class="container">
+            <div class="service-heading heading text-center">
+                <p>what we do</p>
+                <h3>Our core services</h3>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-12">
+                    <div class="service-card m-md-0 empath-card d-flex flex-column align-items-center text-center">
+                        <img src="public/cards.png">
+                        <h4>Empathy-driven Design</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+                        <span class="text-underline">Learn More</span>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="service-card m-md-0 adapt-card d-flex flex-column align-items-center text-center">
+                        <img src="public/grids.png">
+                        <h4>Adaptable and Configurable</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+                        <span class="text-underline">Learn More</span>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="service-card m-md-0 d-flex uni-card flex-column align-items-center text-center">
+                        <img src="public/boxs.png">
+                        <h4>Unified Design Principles</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+                        <span class="text-underline">Learn More</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= Members ======== -->
+    <section class="member">
+        <div class="container">
+            <div class="member-heading heading">
+                <h4>Our dedicated crew is here to provide personalized guidance, <span>helping you to advance in your chosen profession.</span></h4>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="member-card heading d-md-flex align-items-md-center flex-md-column">
+                        <img src="public/director.jpg" alt="director" title="director">
+                        <h5>John Doe</h5>
+                        <p>MANAGING DIRECTOR</p>
+                        <div class="member-social d-flex justify-content-between">
+                            <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="https://dribbble.com/" target="_blank"><i class="fa-brands fa-dribbble"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="member-card heading d-md-flex align-items-md-center flex-md-column">
+                        <img src="public/coach.jpg" alt="coach" title="coach">
+                        <h5>John Doe</h5>
+                        <p>CAREER COACH</p>
+                        <div class="member-social d-flex justify-content-between">
+                            <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="https://dribbble.com/" target="_blank"><i class="fa-brands fa-dribbble"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="member-card heading d-md-flex align-items-md-center flex-md-column">
+                        <img src="public/cofounder.jpg" alt="co-founder" title="co-founder">
+                        <h5>John Doe</h5>
+                        <p>CERTIFIED CAREER COACH</p>
+                        <div class="member-social d-flex justify-content-between">
+                            <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="https://dribbble.com/" target="_blank"><i class="fa-brands fa-dribbble"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== FAQ ======= -->
+    <section class="questions">
+        <div class="container">
+            <div class="question-heading heading text-center">
+                <p>FAQ</p>
+                <h3>Frequently asked question</h3>
+            </div>
+            <div class="que-data">
+                <div class="accordion accordion-flush" id="accordion">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="question-btn d-flex justify-content-between w-100 bg-transparent border-0" data-bs-toggle="collapse" data-bs-target="#one">What services does Coachina business offer? <img src="public/plus.png"></button>
+                        </h3>
+                        <div id="one" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                            <div class="accordion-body ps-0 pe-0">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="question-btn d-flex justify-content-between w-100 bg-transparent border-0" data-bs-toggle="collapse" data-bs-target="#two">How does Coachina approach business transformation?<img src="public/plus.png"></button>
+                        </h3>
+                        <div id="two" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                            <div class="accordion-body ps-0 pe-0">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="question-btn d-flex justify-content-between w-100 bg-transparent border-0" data-bs-toggle="collapse" data-bs-target="#three">What kind of support does Coachina provide for leadership?<img src="public/plus.png"></button>
+                        </h3>
+                        <div id="three" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                            <div class="accordion-body ps-0 pe-0">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="question-btn d-flex justify-content-between w-100 bg-transparent border-0" data-bs-toggle="collapse" data-bs-target="#four">How does Coachina help with financial management?<img src="public/plus.png"></button>
+                        </h3>
+                        <div id="four" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                            <div class="accordion-body ps-0 pe-0">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== Discover ======== -->
+    <section class="discover">
+        <div class="container">
+            <div class="dis-heading heading d-flex justify-content-between align-items-center">
+                <h3>Discover the latest tips</h3>
+                <div class="btn ps-sm-0">
+                    <a href="javascript:void(0);">View All</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="discover-card">
+                        <img src="public/discover-img-1.jpg" alt="discover" title="discover"/>
+                        <p>NOVEMBER 7, 2022</p>
+                        <h4>The benefits of strategic planning for your business</h4>
+                        <span class="text-underline">Read more</span>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="discover-card">
+                        <img src="public/discover-img-2.jpg" alt="discover" title="discover"/>
+                        <p>JANUARY 10, 2023</p>
+                        <h4>Maximizing team effectiveness through leadership</h4>
+                        <span class="text-underline">Read more</span>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="discover-card">
+                        <img src="public/dsicover-img-3.jpg" alt="discover" title="discover"/>
+                        <p>FEBRUARY 14, 2023</p>
+                        <h4>The importance of adapting to market changes</h4>
+                        <span class="text-underline">Read more</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== Appointment ======== -->
+    <section class="appointment">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 d-flex align-items-center">
+                    <div class="appoin-data heading">
+                        <h3>Your dream job is within reach, and you deserve it.</h3>
+                        <h4>Meeting your job objectives can have a holistic impact on your overall well-being.</h4>
+                        <div class="btn ps-sm-0">
+                            <a href="javascript:void(0);">Book an Appointment</a>
+                            <span class="text-underline">Coaching Packages</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 d-flex align-items-center mt-md-5">
+                    <img class="appoin-img" src="public/appoin-img.png" alt="person" title="person"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== Footer ========= -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-12 col-sm-12">
+                    <div class="footer-heading">
+                        <a href="index.html"><img src="public/logo.png" alt="coachina" title="coachina"/></a>
+                        <p>Enhance your coaching journey with Coachina, a meticulously designed Webflow template tailored for mentoring professionals.</p>
+                    </div>
+                    <div class="footer-news heading position-relative">
+                        <p>SIGN UP FOR OUR NEWSLETTER</p>
+                        <form>
+                            <input type="email" placeholder="Enter your email..." required>
+                            <button  type="submit" class="email-submit-ar"><i class="fa-solid fa-arrow-right"></i></button>
+                        </form>
+                    </div>
+                    <div class="footer-bottom">© This is a <span>Flowmance</span> template powered by <span>Webflow</span></div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer-nav heading">
+                        <p class="ms-sm-0">navigation</p>
+                        <ul class="ps-sm-0">
+                            <a href="/"><li>Home</li></a>
+                            <a href="/about"><li>About</li></a>
+                            <a href="/news"><li>News</li></a>
+                            <a href="/contact"><li>Contact</li></a>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-6">
+                    <div class="footer-social heading">
+                        <p>find us</p>
+                        <div class="member-social footer-icon d-flex justify-content-between ms-md-0">
+                            <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="https://dribbble.com/" target="_blank"><i class="fa-brands fa-dribbble"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="public/bootstrap.bundle.min.js"></script>
+</body>
+</html>

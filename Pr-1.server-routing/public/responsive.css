@@ -1,0 +1,595 @@
+@media(max-width:992px){
+    .container{
+        max-width: 890px;
+        margin: 0 auto;
+    } 
+
+    /* header */
+
+    .header-right{
+        order: 0;
+        margin-left: auto;
+    }
+    .navbar-toggler{
+        order: 1;
+    }
+    .navbar-collapse{
+        order: 2;
+    }
+    .header-center{
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+
+    /* banner */
+
+    .banner{
+        padding-top: 20px;
+        padding-bottom: 80px;
+    }
+    .banner .col-lg-6:first-child{
+        order: 2;
+    }
+    .banner-data{
+        max-width: 80%;
+        margin: 0 auto;
+    }
+    .banner-btn{
+        max-width: 80%;
+        margin: 0 auto;
+    }
+    .banner-img img{
+        max-width: 70%;
+        margin: 0 auto;
+        margin-bottom: 60px;
+    }
+
+    /* features */
+
+    .features{
+        padding-bottom: 60px;
+    }
+    .feature-card:last-child{
+        padding-top: 20px;
+    }
+
+    /* Register */
+
+    .register{
+        padding-bottom: 80px;
+    }
+    .reg-form{
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    .form-heading h4{
+        max-width: 80%;
+    }
+
+    /* slider */
+
+    .brands{
+        padding: 0px 0px 80px 0px;
+    }
+
+    /* result */
+
+    .result{
+        padding-top: 80px;
+    }
+    .result-heading{
+        margin-top: 100px;
+        margin-bottom: 60px;
+    }
+    .result .col-lg-6:first-child{
+        order: 2;
+    }
+    .result-img{
+        max-height: 550px;
+    }
+
+    /* future */
+
+    .future{
+        padding-bottom: 50px;
+    }
+    .future-left h3{
+        font-size: 40px;
+        margin-bottom: 0;
+    }
+    .future-right h4{
+        padding: 35px 0px;
+    }
+    .f-card{
+        border: none;
+    }
+
+    /* service */
+
+    .service{
+        padding-bottom: 40px;
+    }
+    .service-heading h3{
+        margin-bottom: 20px;
+    }
+    .service-card h4{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .service-card p{
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    .service-card{
+        padding-top: 40px;
+    }
+
+    /* members */
+
+    .member-social{
+        margin-top: 20px;
+    }
+    .member-heading h4{
+        max-width: 90%;
+    }
+
+    /* =FAQ= */
+
+    .questions{
+        padding-top: 0;
+        padding-bottom: 100px;
+    }
+    .question-heading h3{
+        font-size: 45px;
+    }
+    .que-data{
+        max-width: 95%;
+    }
+    .accordion-body p{
+        max-width: 95%;
+    }
+
+    /* discover */
+
+    .discover{
+        padding-top: 70px;
+    }
+    .dis-heading h3{
+        font-size: 45px;
+    }
+    .discover-card img{
+        width: 410px;
+    }
+    .discover .col-md-6:last-child{
+        margin-top: 30px;
+    }
+
+    /* appointment */
+
+    .appoin-data h3{
+        font-size: 40px;
+    }
+
+    /* footer */
+
+    footer{
+        padding-bottom: 20px;
+    }
+    .footer-nav{
+        margin-top: 50px;
+        margin-left: 0;
+    }
+    .footer-social{
+        margin-top: 50px;
+        margin-left: 0;
+    }
+    .email-submit-ar{
+        right: 265px;
+        bottom: 12px;
+    }
+}
+
+
+@media(max-width:768px){
+    .container{
+        max-width:750px;
+        margin: 0 auto;
+    }
+
+    /* banner */
+
+    .banner-data{
+        max-width: 90%;
+    }
+    .banner-data h1{
+        max-width: 90%;
+        font-size: 33px;
+    }
+    .banner-data h4{
+        max-width: 95%;
+    }
+    .banner-img{
+        margin: 0 auto;
+    }
+    .banner-img img{
+        max-width: 100%;
+    }
+    .banner-btn{
+        max-width: 90%;
+    }
+
+    /* feature */
+
+    .feature-bg{
+        padding-top: 0;
+    }
+    .feature-card{
+        margin: 0;
+        margin-top: 30px;
+    }
+
+    /* Register */
+
+    .register{
+        padding-bottom: 80px;
+    }
+    .reg-form{
+        margin: 0 auto;
+        margin-top: 40px;
+    }
+    .form-heading h4{
+        max-width: 90%;
+    }
+
+    /* future */
+
+    .future-data{
+        padding-top: 60px;
+    }
+    .future-right h4{
+        margin-left: 0;
+        padding: 45px 0px;
+    }
+    .card-space{
+        margin-left: 0;
+    }
+
+    /* achievement */
+
+    .achiev-heading{
+        margin-bottom: 40px;
+        max-width: 100%;
+    }
+    .achiev-number{
+        margin-top: 30px;
+    }
+
+    /* result */
+
+    .result-img{
+        height: 450px;
+    }
+    .result-heading{
+        margin-top: 60px;
+    }
+
+    /* ==== future ===== */
+    .f-card p{
+        max-width: 90%;
+    }
+    .future-card .col-md-6:nth-child(3), .future-card .col-md-6:nth-child(4){
+        margin-top: 20px;
+    }
+    /* service */
+
+    .service{
+        padding-top: 60px;
+    }
+    .service .empath-card, .service .adapt-card, .service .uni-card{
+        margin: 0px;
+    }
+
+    /* result */
+
+    .result{
+        padding-bottom: 60px;
+    }
+    /* members */
+    .member-card{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .member-card img{
+        max-width: 68%;
+    }
+
+    /* FAQ */
+
+    .accordion-body p{
+        max-width: 670px;
+    }
+    .question-btn img{
+        width: 35px;
+        padding: 5px;
+    }
+    .accordion-item h3 button{
+        text-align: left;
+    }
+
+    /* discover */
+
+    .discover{
+        padding-bottom: 60px;
+    }
+    .discover-card{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+    .dis-heading{
+        margin-bottom: 30px;
+    }
+    .discover-card{
+        margin-top: 50px;   
+    }
+    .discover-card h4{
+        max-width: 600px;
+    }
+    .discover-card img{
+        width: 95%;
+        height: auto;
+    }
+
+    /* appointment */
+
+    .appoin-img{
+        margin-top: 80px;
+    }
+
+    /* footer */
+
+    footer{
+        padding-top: 0;
+    }
+    footer .col-sm-6{
+        order:-1;
+    }
+    .footer-social{
+        margin-top: 50px;
+    }
+    .email-submit-ar{
+        right: 80px;
+    }
+    .footer-heading{
+        max-width: 90%;
+    }
+    .footer-news input{
+        width: 90%;
+    }
+}
+
+
+@media(max-width:568px){
+
+    /* ==== Future ==== */
+    .future-card .col-md-6:nth-child(3), .future-card .col-md-6:nth-child(4){
+        margin-top: 0px;
+    }
+
+    /* ===== discover ===== */
+    .dis-heading h3{
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+    .dis-heading{
+        flex-direction: column;
+    }
+
+    /* ==== Footer ==== */
+    .footer-nav p, .footer-nav ul{
+        margin-left: 0;
+        padding-left: 0;
+    }
+    .footer-social{
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+    .email-submit-ar{
+        right: 60px;
+    }
+}
+
+
+@media(max-width:480px){
+    .container{
+        max-width: 470px;
+        margin: 0 auto;
+    }
+
+    /* = header = */
+
+    .coachina-logo{
+        max-width: 80%;
+    }
+    .header-right{
+        display: none;
+    }
+
+    /* = banner = */
+
+    .banner-data{
+        max-width: 95%;
+    }
+    .banner-data h1{
+        max-width: 90%;
+        line-height: 35px;
+        font-size: 31px;
+    }
+    .banner-data h4{
+        max-width: 95%;
+        font-size: 24px;
+        line-height: 28px;
+    }
+    .banner-btn a{
+        display: block;
+        margin-top: 30px;
+    }
+    .banner-img img{
+        width: 100%;
+    }
+
+    /* = register = */
+
+    .reg-form{
+        max-width: 95%;
+    }
+    .reg-content h3{
+        font-size: 25px;
+        line-height: 30px;
+        max-width: 90%;
+    }
+    .form-heading h4{
+        max-width: 95%;
+        margin-bottom: 40px;
+        line-height: 28px;
+    }
+
+    /* =feature= */
+
+    .feature-bg{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .feature-card p{
+        max-width: 90%;
+    }
+
+    /* achievment */
+
+    .achiev-heading h4{
+        line-height: 28px;
+    }
+
+    /* = result = */
+
+    .result-box{
+        border-radius: 20px;
+    }
+    .result-img{
+        max-height: 300px;
+        border-radius: 20px;
+    }
+    .result-heading{
+        margin: 40px 0px;
+        max-width: 90%;
+    }
+    .result-heading h3{
+        max-width: 90%;
+    }
+    .result-heading img{
+        margin-left: 20px;
+        animation: float 10s infinite linear alternate;
+    }
+    @keyframes float{
+        from{
+            transform: translateX(10px);
+        }
+        to{
+            transform: translateX(-20px);
+        }
+    }
+    .result-heading h3{
+        font-size: 25px;
+        line-height: 30px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .future-left h3{
+        font-size: 34px;
+    }
+    .f-btn a{
+        margin-bottom: 30px;
+        display: block;
+    }
+    .f-btn span{
+        margin-left: 5px;
+    }
+    .f-card{
+        margin-top: 20px;
+    }
+
+    /* FAQ */
+
+    .question-heading h3{
+        font-size: 34px;
+    }
+
+    /*==== member ====*/
+
+    .member-heading h4{
+        max-width: 100%;
+    }
+    .member-card img{
+        max-width: 95%;
+    }
+
+    /*======== discover ========*/
+
+    .dis-heading{
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+    .dis-heading .btn{
+        margin-top: 20px;
+    }
+    .dis-heading h3{
+        font-size: 34px;
+        display: block;
+        margin-bottom: 0;
+    }
+
+    /*====== FAQ ========*/
+
+    .accordion-item h3 button{
+        font-size: 16px;
+    }
+    .question-btn img{
+        width: 30px;
+        padding: 5px;
+    }
+
+    /* ===== appointment ===== */
+
+    .appoin-data .btn a{
+        display: block;
+        margin-bottom: 30px;
+    }
+    .appoin-data .text-underline{
+        margin-left: -10px;
+    }
+
+    /* ==== footer ==== */
+
+    .footer-nav p, .footer-nav ul{
+        padding-left: 0;
+        margin-left: 0; 
+    }
+    .footer-social{
+        margin-top: 20px;
+        margin-bottom: 50px;
+    }
+    .footer-heading{
+        max-width: 100%;
+    }
+    .footer-heading p{
+        max-width: 90%;
+    }
+    .footer-news input{
+        border-radius: 60px;
+    }
+    .email-submit-ar{
+        right: 50px;
+    }
+}

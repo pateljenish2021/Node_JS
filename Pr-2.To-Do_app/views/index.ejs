@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>To-Do List</h1>
+
+      <!-- Navigation Tabs -->
+      <div class="tab-container">
+        <div class="tabs">
+          <a href="/" class="<%= filter === 'all' ? 'active' : '' %>">All</a>
+          <a href="/pending" class="<%= filter === 'pending' ? 'active' : '' %>"
+            >Pending</a
+          >
+          <a
+            href="/completed"
+            class="<%= filter === 'completed' ? 'active' : '' %>"
+            >Completed</a
+          >
+        </div>
+      </div>
+
+      <!-- Add / Edit Task Form -->
+      <form action="/add" method="POST">
+        <input
+          type="text"
+          name="task"
+          placeholder="Enter a new task"
+          value="<%= editTask ? editTask.text : '' %>"
+          required
+        />
+        <input
+          type="hidden"
+          name="taskId"
+          value="<%= editTask ? editTask.id : '' %>"
+        />
+        <button type="submit">
+          <%= editTask ? "✏️ Update Task" : "+ Add Task" %>
+        </button>
+      </form>
+
+      <ul>
+        <% tasks.forEach((task) => { %> <% if (filter === 'all' || filter ===
+        task.status) { %>
+        <li class="<%= task.status %>">
+          <div class="task-info">
+            <span class="task-text"><%= task.text %></span>
+            <span class="task-time"><%= task.createdAt %></span>
+          </div>
+
+          <!-- Button Box -->
+          <div class="task-buttons">
+            <form action="/edit" method="POST" class="form-btn">
+              <input type="hidden" name="id" value="<%= task.id %>" />
+              <button type="submit">✏️</button>
+            </form>
+            <form action="/delete" method="POST" class="form-btn">
+              <input type="hidden" name="id" value="<%= task.id %>" />
+              <button type="submit">🗑️</button>
+            </form>
+            <form action="/update-status" method="POST" class="form-btn">
+              <input type="hidden" name="id" value="<%= task.id %>" />
+              <button type="submit">
+                <%= task.status === "pending" ? "✅" : "⏳" %>
+              </button>
+            </form>
+          </div>
+        </li>
+        <% } %> <% }); %>
+      </ul>
+    </div>
+  </body>
+</html>
