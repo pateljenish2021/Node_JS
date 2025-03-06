@@ -200,6 +200,15 @@ h1, h3 {
 .home, .favourite, .admin{
     transition: all 0.2s ease-in-out;
 }
+.active-home {
+    filter: drop-shadow(1px 1px 15px #39adec);
+}
+.active-fav {
+    filter: drop-shadow(1px 1px 15px #ec3939);
+}
+.active-admin {
+    filter: drop-shadow(1px 1px 15px #e4e4e4);
+}
 .home:hover{
     filter: drop-shadow(1px 1px 15px #39adec);
 }
@@ -223,6 +232,7 @@ h1, h3 {
 }
   
 
+
 .loader-container {
     position: fixed;
     top: 0;
@@ -234,15 +244,17 @@ h1, h3 {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s ease-out, visibility 1s ease-out;
 }
 
 .loader-container img {
     height: 30rem;
 }
 
-/* Smooth fade-out effect */
-.loader-container.fade {
+/* Hide loader with smooth transition */
+.loader-container.hidden {
     opacity: 0;
     visibility: hidden;
 }

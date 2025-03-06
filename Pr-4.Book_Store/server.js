@@ -16,13 +16,13 @@ server.use(express.static(path.join(__dirname, "public")));
 
 server.get("/", async (req, res) => {
   const books = await Book.find();
-  res.render("index", { books });
+  res.render("index", { books, activePage: "home" });
 });
 
 server.get("/admin", async (req, res) => {
   const books = await Book.find();
   const book = req.query.edit ? await Book.findById(req.query.edit) : null;
-  res.render("admin", { books, book });
+  res.render("admin", { books, book, activePage: "admin" });
 });
 
 server.post("/admin/add-book", async (req, res) => {
@@ -55,7 +55,7 @@ server.get("/favorites", async (req, res) => {
   const books = await Promise.all(
     favorites.map(async (fav) => await Book.findById(fav.bookId))
   );
-  res.render("fav", { books });
+  res.render("fav", { books, activePage: "favorites" });
 });
 
 

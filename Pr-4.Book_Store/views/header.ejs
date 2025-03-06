@@ -12,7 +12,7 @@
 
     <title>Document</title>
   </head>
-  <body>
+  <body >
     <nav class="navbar navbar-expand-lg navbar-dark bg-gradient shadow-lg">
       <div class="container">
         <a class="navbar-brand fw-bold" href="/" style="font-size: 23px"
@@ -29,33 +29,37 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link text-light mx-2" href="/"
-                ><img
+              <a class="nav-link text-light mx-2" href="/">
+                <img
                   src="/images/home.png"
                   width="30px"
                   alt="home"
-                  class="home"
-              /></a>
+                  class="home <%= activePage === 'home' ? 'active-home' : '' %>"
+                />
+              </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-light mx-2" href="/favorites"
-                ><img
+              <a class="nav-link text-light mx-2" href="/favorites">
+                <img
                   src="/images/heart.png"
                   width="32px"
                   alt="favorites"
-                  class="favourite"
-              /></a>
+                  class="favourite <%= activePage === 'favorites' ? 'active-fav' : '' %>"
+                />
+              </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-light" href="/admin"
-                ><img
+              <a class="nav-link text-light mx-2" href="/admin">
+                <img
                   src="/images/upload.png"
                   width="34px"
                   alt="admin"
-                  class="admin"
-              /></a>
+                  class="admin <%= activePage === 'admin' ? 'active-admin' : '' %>"
+                />
+              </a>
             </li>
           </ul>
+          
         </div>
       </div>
     </nav>

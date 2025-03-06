@@ -1,9 +1,11 @@
 function loader() {
-    document.querySelector(".loader-container").style.display = "none";
+    const loader = document.querySelector(".loader-container");
+    loader.style.opacity = "0";
+    loader.style.visibility = "hidden"; 
   }
-
+  
   function fadeOut() {
-    setTimeout(loader, 2000);
+    setTimeout(loader, 1000); 
   }
-
+  
   window.onload = fadeOut;
