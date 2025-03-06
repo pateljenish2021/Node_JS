@@ -1,0 +1,224 @@
+body {
+    font-family:  Arial, Helvetica, sans-serif !important;
+    background-color: #000 !important;
+    color: #fff;
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar{
+ width: 0px;
+}
+.card img {
+    object-fit: cover;
+}
+
+.card img {
+    object-fit: cover;
+}
+.btn-warning {
+    background-color: #ffc107;
+    border: none;
+    font-weight: bold;
+}
+.btn-warning:hover {
+    background-color: #e0a800;
+}
+
+.card-title a {
+    text-decoration: none;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+}
+
+.btn-outline-light {
+    border-radius: 25px;
+}
+
+.navbar {
+    background: linear-gradient(45deg, #343a40, #212529);
+    padding: 15px;
+}
+
+.nav-link {
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #ffc107 !important;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.card-title a {
+    text-decoration: none;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+}
+
+h1, h3 {
+    font-weight: bold;
+}
+
+
+.book-card{
+    position: relative;
+    background-color: transparent;
+    border: 1px solid #fff;
+    /* z-index: 10; */
+    height: 470px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeIn 1.2s ease-in forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+    transition: all 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.8);
+    }
+    to{
+        opacity: 1;
+    }
+}
+.book-card:hover .card-box{
+    top: 110%;
+    box-shadow: 0 0 50px 15px #48abe0;
+}
+.book-card:hover .card-img img{
+    transform: translateY(-10px) scale(1.02);
+}
+.book-card:hover .card-read{
+    bottom: 0px;
+}
+.card-box{
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background-color: #ffffff;
+    border: none;
+    top: 115%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(44.5deg);
+    z-index: -1;
+    box-shadow: 0 0 30px 15px #48abe0;
+    transition: all 0.3s ease-in-out;
+    
+}
+.card-img{
+    height: 370px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    object-fit: cover;
+
+}
+.card-img img{
+    transition: all 0.3s ease-in-out;
+    width: 300px;
+    /* filter: drop-shadow(1px 1px 20px #48abe0); */
+}
+.col-lg-4{
+    padding: 0px 30px 40px;
+}
+.card-body{
+    color: #000;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.card-title a{
+    color: #000;
+}
+.heading{
+    color: #ffffff;
+    margin-bottom: 50px;
+}
+.card-read{
+    position: absolute;
+    text-decoration: none;
+    bottom: -40px;
+    background-color: #c7c7c7;
+    color: #000;
+    width: 100%;
+    height: 30px;
+    padding-top: 5px;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    border-radius: 15px 15px 0px 0px;
+}
+.add-fav-btn{
+    filter: grayscale(100%) drop-shadow(0px 0px 0px #ffffff8a);
+}
+.fav-btn{
+    position: absolute;
+    top: 10px;
+    right: 7px;    
+    background-color: transparent;
+    border: none;
+    transition: all 0.2s ease-in-out;
+}
+.remove-fav-btn{
+    filter: grayscale(0%);
+}
+.remove-fav-btn:hover{
+    filter: grayscale(100%);
+}
+.add-fav-btn:hover{
+    filter: grayscale(0%) drop-shadow(1px 1px 5px #ffffff8a);
+}
+.home, .favourite, .admin{
+    transition: all 0.2s ease-in-out;
+}
+.home:hover{
+    filter: drop-shadow(1px 1px 15px #39adec);
+}
+.favourite:hover{
+    filter: drop-shadow(1px 1px 15px #ec3939);
+}
+.admin:hover{
+    filter: drop-shadow(1px 1px 15px #e4e4e4);
+}
+.add-btn{
+    border-radius: 10px;
+    width: 150px;
+    font-size: 18px;
+    font-weight: 400;
+    border: 1px solid #fff;
+}
+.add-btn:hover{
+    border: 1px solid #fff;
+    color: #fff !important;
+    background-color: transparent !important;
+}
+  
