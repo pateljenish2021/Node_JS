@@ -222,3 +222,27 @@ h1, h3 {
     background-color: transparent !important;
 }
   
+
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10000;
+    background: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+.loader-container img {
+    height: 30rem;
+}
+
+/* Smooth fade-out effect */
+.loader-container.fade {
+    opacity: 0;
+    visibility: hidden;
+}
