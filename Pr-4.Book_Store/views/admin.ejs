@@ -26,22 +26,22 @@
                             <input type="hidden" name="id" value="<%= book._id %>">
                         <% } %>
                         <div class="mb-3">
-                            <label class="form-label">📖 Book Name</label>
+                            <label class="form-label"><img src="/images/book.png" alt="" width="20px" style="margin-left: 5px;"> Book Name</label>
                             <input type="text" name="name" class="form-control bg-dark text-light" 
                                 value="<%= book ? book.name : '' %>" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">✍️ Author Name</label>
+                            <label class="form-label"><img src="/images/author.png" alt="" width="20px" style="margin-left: 5px;"> Author Name</label>
                             <input type="text" name="author" class="form-control bg-dark text-light" 
                                 value="<%= book ? book.author : '' %>" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">🖼️ Image URL</label>
+                            <label class="form-label"><img src="/images/image.png" alt="" width="20px" style="margin-left: 5px;"> Image URL</label>
                             <input type="text" name="imageUrl" class="form-control bg-dark text-light" 
                                 value="<%= book ? book.imageUrl : '' %>" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">📜 Description</label>
+                            <label class="form-label"><img src="/images/description.png" alt="" width="20px" style="margin-left: 5px;"> Description</label>
                             <textarea name="description" class="form-control bg-dark text-light" rows="3" required>
                                 <%= book ? book.description.trim() : '' %>
                             </textarea>
@@ -59,14 +59,16 @@
                 <table class="table table-dark table-hover shadow-lg mt-3">
                     <thead>
                         <tr>
-                            <th>📖 Name</th>
-                            <th>✍️ Author</th>
-                            <th>⚙️ Actions</th>
+                            <th>#</th>
+                            <th><img src="/images/book.png" alt="" width="20px"> Name</th>
+                            <th><img src="/images/author.png" alt="" width="20px"> Author</th>
+                            <th><img src="/images/actions.png" alt="" width="20px"> Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <% books.forEach(book => { %>
+                        <% books.forEach((book, index) => { %>
                             <tr>
+                                <td><%= index + 1 %></td>
                                 <td><%= book.name %></td>
                                 <td><%= book.author %></td>
                                 <td>
