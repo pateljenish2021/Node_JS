@@ -13,10 +13,10 @@
     <%- include('header') %>
   </head>
   <body>
-    <div class="container mt-5">
+    <div class="container mt-2">
       <div class="row">
         <div class="col-md-4">
-          <div>
+          <div class="sticky-img">
             <img
               src="<%= book.imageUrl %>"
               class="img-fluid rounded shadow-lg"
@@ -24,8 +24,10 @@
           </div>
         </div>
         <div class="col-md-8">
-          <h1 class="fw-bold"><%= book.name %></h1>
-          <h4 class="text-light">by <%= book.author %></h4>
+          <div class="sticky-text">
+            <h1 class="fw-bold"><%= book.name %></h1>
+            <h4 class="text-light">by <%= book.author %></h4>
+          </div>
           <p class="text-light mt-3"><%= book.description %></p>
         </div>
       </div>
