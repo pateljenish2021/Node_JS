@@ -12,7 +12,7 @@ connectDB();
 
 server.use(bodyParser.urlencoded({ extended: true }));
 server.set("view engine", "ejs");
-server.use(express.static(path.join(__dirname, "public")));
+server.use("/",express.static(path.join(__dirname, "public")));
 
 server.get("/", async (req, res) => {
   const books = await Book.find();
