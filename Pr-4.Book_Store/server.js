@@ -42,12 +42,12 @@ server.post("/admin/delete", async (req, res) => {
 
 server.get("/book", async (req, res) => {
   const book = await Book.findById(req.query.id);
-  res.render("book", { book });
+  res.render("book", { book, activePage: null });
 });
 
 server.get("/favorites/book", async (req, res) => {
   const book = await Book.findById(req.query.id);
-  res.render("book", { book });
+  res.render("book", { book, activePage: null });
 });
 
 server.get("/favorites", async (req, res) => {

@@ -199,15 +199,16 @@ h1, h3 {
 }
 .home, .favourite, .admin{
     transition: all 0.2s ease-in-out;
+    filter: grayscale(80%);
 }
 .active-home {
-    filter: drop-shadow(1px 1px 15px #39adec);
+    filter: drop-shadow(1px 1px 15px #39adec) grayscale(0%);
 }
 .active-fav {
-    filter: drop-shadow(1px 1px 15px #ec3939);
+    filter: drop-shadow(1px 1px 15px #ec3939) grayscale(0%);
 }
 .active-admin {
-    filter: drop-shadow(1px 1px 15px #e4e4e4);
+    filter: drop-shadow(1px 1px 15px #5AC077 ) grayscale(0%);
 }
 .home:hover{
     filter: drop-shadow(1px 1px 15px #39adec);
@@ -216,7 +217,7 @@ h1, h3 {
     filter: drop-shadow(1px 1px 15px #ec3939);
 }
 .admin:hover{
-    filter: drop-shadow(1px 1px 15px #e4e4e4);
+    filter: drop-shadow(1px 1px 15px #5AC077);
 }
 .add-btn{
     border-radius: 10px;
