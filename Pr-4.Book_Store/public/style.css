@@ -95,7 +95,7 @@ h1, h3 {
     opacity: 0;
     animation: fadeIn 1.2s ease-in forwards;
     animation-timeline: view();
-    animation-range: entry 0% cover 40%;
+    animation-range: entry 0% cover 30%;
     transition: all 0.3s ease-in-out;
 }
 
