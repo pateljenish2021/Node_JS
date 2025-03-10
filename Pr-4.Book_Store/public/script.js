@@ -5,7 +5,7 @@ function loader() {
   }
   
   function fadeOut() {
-    setTimeout(loader, 200); 
+    setTimeout(loader, 300); 
   }
   
   window.onload = fadeOut;
