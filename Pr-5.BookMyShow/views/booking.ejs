@@ -1,61 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
-    <link rel="icon" href="images/favicon.png">
+    <link rel="icon" href="/images/favicon.png">
     <title>Your Bookings - BookMyShow Surat</title>
 </head>
+
 <body>
+
     <header>
         <div class="container">
             <div class="top-header">
                 <div>
-                    <a href="/"><img src="images/bookmyshow-logo-vector.png" class="bookmyshow" alt="" ></a>
+                    <a href="/"><img src="/images/bookmyshow-logo-vector.png" class="bookmyshow" alt="BookMyShow Logo"></a>
                 </div>
-                
             </div>
         </div>
-            <div style="background-color: #f5f5f5;">
-                <div class="bottom-header">
-                    <div>
-                        <ul>
-                            <li style="padding-left: 0;"><a href="/all-movies">Movies</a></li>
-                            <li><a href="/bookings" class="nav-active">Your Bookings</a></li>
-                            <li><a href="/coming-soon">Events</a></li>
-                            <li><a href="/coming-soon">Plays</a></li>
-                            <li><a href="/coming-soon">Sports</a></li>
-                            <li><a href="/coming-soon">Activities</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <ul>
-                            <li style="padding-right: 0;"><a href="/admin">Upload Movie</a></li>
-                        </ul>
-                    </div>
+        <div style="background-color: #f5f5f5;">
+            <div class="bottom-header">
+                <div>
+                    <ul>
+                        <li><a href="/all-movies">Movies</a></li>
+                        <li><a href="/bookings" class="nav-active">Your Bookings</a></li>
+                        <li><a href="/coming-soon">Events</a></li>
+                        <li><a href="/coming-soon">Plays</a></li>
+                        <li><a href="/coming-soon">Sports</a></li>
+                        <li><a href="/coming-soon">Activities</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li><a href="/admin">Upload Movie</a></li>
+                    </ul>
                 </div>
             </div>
+        </div>
     </header>
 
     <main>
-        <h2>All Bookings</h2>
         <div class="bookings-container">
+            <h2>All Bookings</h2>
             <% if (bookings.length === 0) { %>
-                <p>No bookings found.</p>
+                <p class="no-bookings">No bookings found.</p>
             <% } else { %>
-                <% for (let booking of bookings) { %>
+                <% bookings.forEach((booking, index) => { %>
                     <div class="booking-card">
-                        <img src="/uploads/<%= booking.movieImage %>" alt="<%= booking.movieTitle %>">
+                        <h2 class="booking-number"><%= index + 1 %>.</h2>
+                        <img src="/uploads/<%= booking.backgroundImage %>" alt="<%= booking.movieTitle %>">
                         <div class="booking-info">
                             <h3><%= booking.movieTitle %></h3>
+                            <p><strong>Category:</strong> <%= booking.category %></p>
+                            <p><strong>Duration:</strong> <%= booking.duration %></p>
                             <p><strong>Seats:</strong> <%= booking.selectedSeats.join(", ") %></p>
+                            <p><strong>Total Price:</strong> ₹<%= booking.selectedSeats.length * 200 %></p>
                             <p><strong>Booking Date:</strong> <%= booking.bookingDate.toDateString() %></p>
+                            <p class="status">Status: Confirmed </p>
                         </div>
                     </div>
-                <% } %>
+                <% }) %>
             <% } %>
         </div>
     </main>
+
 </body>
 </html>

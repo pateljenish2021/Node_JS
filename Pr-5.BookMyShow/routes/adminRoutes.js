@@ -3,7 +3,6 @@ const router = express.Router();
 const multer = require("multer");
 const movieController = require("../controllers/adminController");
 
-// Multer Setup
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, "uploads/");
@@ -14,7 +13,6 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
-// Admin Panel Routes
 router.get("/", movieController.getAllMovies);
 router.post("/add", upload.fields([{ name: "image" }, { name: "backgroundImage" }]), movieController.addMovie);
 router.get("/edit/:id", movieController.getMovieForEdit);

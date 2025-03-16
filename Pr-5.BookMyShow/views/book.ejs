@@ -29,51 +29,12 @@
                     }
 
                     seatCount.innerText = selectedSeats.length;
-                    totalPrice.innerText = selectedSeats.length * 200; // ₹200 per seat
+                    totalPrice.innerText = selectedSeats.length * 200;
                     seatInput.value = selectedSeats.join(",");
                 });
             });
         });
     </script>
-    <style>
-        .seat-container {
-            display: grid;
-            grid-template-columns: repeat(10, 40px);
-            gap: 5px;
-            margin: 20px auto;
-            justify-content: center;
-        }
-        .seat {
-            width: 40px;
-            height: 40px;
-            background-color: #ddd;
-            border-radius: 5px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .seat.selected {
-            background-color: green;
-            color: white;
-        }
-        .seat.booked {
-            background-color: red;
-            cursor: not-allowed;
-        }
-        .seat-screen {
-            width: 100%;
-            text-align: center;
-            background-color: black;
-            color: white;
-            padding: 5px;
-            margin-bottom: 10px;
-        }
-        .summary {
-            text-align: center;
-            margin-top: 10px;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -107,17 +68,26 @@
     </header>
 
     <main class="booking-container">
-        <h2><%= movie.title %></h2>
-        <p><strong>Category:</strong> <%= movie.category %></p>
-        <p><strong>Duration:</strong> <%= movie.duration %> min</p>
-        <p><strong>Ratings:</strong> <%= movie.ratings %>/10</p>
+        <div class="book-info">
+            <div>
+                <img class="book-image" src="/uploads/<%= movie.backgroundImage %>" alt="">
+            </div>
+            <div class="book-data">
+                <h2><%= movie.title %></h2>
+                <p><strong>Category:</strong> <%= movie.category %></p>
+                <p><strong>Duration:</strong> <%= movie.duration %> min</p>
+                <p><strong>Ratings:</strong> <%= movie.ratings %>/10</p>
+            </div>
+        </div>
 
-        <div class="seat-screen">Screen</div>
+        <div class="screen">
+            <div class="seat-screen">Screen</div>
 
         <div class="seat-container">
-            <% for (let i = 1; i <= 50; i++) { %>
+            <% for (let i = 1; i <= 90; i++) { %>
                 <div class="seat" data-seat="<%= i %>"><%= i %></div>
             <% } %>
+        </div>
         </div>
 
         <div class="summary">

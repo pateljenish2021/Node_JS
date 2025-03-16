@@ -2,7 +2,6 @@ const Movie = require("../models/Movie");
 const fs = require("fs");
 const path = require("path");
 
-// Get all movies (Admin)
 exports.getAllMovies = async (req, res) => {
     try {
         const movies = await Movie.find();
@@ -13,7 +12,6 @@ exports.getAllMovies = async (req, res) => {
     }
 };
 
-// Add a new movie
 exports.addMovie = async (req, res) => {
     try {
         const { title, category, duration, ratings, releaseDate, description, status, language, recommended } = req.body;
@@ -32,7 +30,7 @@ exports.addMovie = async (req, res) => {
             description,
             status,
             language,
-            recommended: recommended === "on" // Convert checkbox to boolean
+            recommended: recommended === "on"
         });
 
         await newMovie.save();
@@ -43,7 +41,6 @@ exports.addMovie = async (req, res) => {
     }
 };
 
-// Get a movie for editing
 exports.getMovieForEdit = async (req, res) => {
     try {
         const movie = await Movie.findById(req.params.id);
@@ -55,7 +52,6 @@ exports.getMovieForEdit = async (req, res) => {
     }
 };
 
-// Update a movie
 exports.updateMovie = async (req, res) => {
     try {
         const { title, category, duration, ratings, releaseDate, description, status, language, recommended } = req.body;
@@ -87,7 +83,6 @@ exports.updateMovie = async (req, res) => {
     }
 };
 
-// Delete a movie
 exports.deleteMovie = async (req, res) => {
     try {
         const movie = await Movie.findById(req.params.id);

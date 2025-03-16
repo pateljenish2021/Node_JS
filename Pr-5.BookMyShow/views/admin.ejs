@@ -4,90 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
-    <link rel="icon" href="images/favicon.png">
+    <link rel="icon" href="https://i.ibb.co/1JsCznN7/favicon.png">
     <title>Admin Panel - BookMyShow</title>
     <style>
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-        }
-        .admin-container {
-            display: flex;
-            padding: 20px;
-            gap: 20px;
-        }
-        .col-6 {
-            flex: 1;
-            background: #2a2a2a;
-            padding: 20px;
-            border-radius: 10px;
-        }
-        .form-section h2, .col-6 h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        label {
-            display: block;
-            font-weight: bold;
-        }
-        input, select, textarea {
-            width: 100%;
-            padding: 8px;
-            margin-top: 5px;
-            background: #444;
-            border: none;
-            color: white;
-            border-radius: 5px;
-        }
-        button {
-            width: 100%;
-            padding: 10px;
-            background: #ff3b3b;
-            border: none;
-            color: white;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-        button:hover {
-            background: #e62e2e;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: #333;
-        }
-        th, td {
-            padding: 10px;
-            border-bottom: 1px solid #555;
-            text-align: center;
-        }
-        img {
-            border-radius: 5px;
-        }
-        .btn {
-            padding: 8px 15px;
-            margin: 2px;
-            border-radius: 5px;
-            text-decoration: none;
-            color: white;
-            display: inline-block;
-        }
-        .btn-edit {
-            background: #ffb300;
-        }
-        .btn-edit:hover {
-            background: #e09b00;
-        }
-        .btn-delete {
-            background: #ff3b3b;
-        }
-        .btn-delete:hover {
-            background: #e62e2e;
+        body{
+            background-color: #ebebeb;
         }
     </style>
 </head>
@@ -96,7 +17,7 @@
         <div class="container">
             <div class="top-header">
                 <div>
-                    <a href="/"><img src="images/bookmyshow-logo-vector.png" class="bookmyshow" alt="" ></a>
+                    <a href="/"><img src="https://i.ibb.co/1GLDJZbm/bookmyshow-logo-vector.png" class="bookmyshow" alt="" ></a>
                 </div>
             </div>
         </div>
@@ -126,75 +47,83 @@
         <div class="col-6 form-section">
             <h2><%= movie ? "Edit Movie" : "Add Movie" %></h2>
             <form action="<%= movie ? '/admin/update/' + movie._id : '/admin/add' %>" method="POST" enctype="multipart/form-data">
-                <div class="form-group">
-                    <label>Title:</label>
-                    <input type="text" name="title" value="<%= movie ? movie.title : '' %>" required>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Title:</label>
+                        <input type="text" name="title" value="<%= movie ? movie.title : '' %>" required>
+                    </div>
+    
+                    <div class="form-group">
+                        <label>Category:</label>
+                        <input type="text" name="category" value="<%= movie ? movie.category : '' %>" required>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label>Category:</label>
-                    <input type="text" name="category" value="<%= movie ? movie.category : '' %>" required>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Duration:</label>
+                        <input type="text" name="duration" value="<%= movie ? movie.duration : '' %>" required>
+                    </div>
+    
+                    <div class="form-group">
+                        <label>Ratings:</label>
+                        <input type="number" step="0.1" name="ratings" value="<%= movie ? movie.ratings : '' %>" required>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label>Duration:</label>
-                    <input type="text" name="duration" value="<%= movie ? movie.duration : '' %>" required>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Release Date:</label>
+                        <input type="date" name="releaseDate" value="<%= movie ? movie.releaseDate.toISOString().split('T')[0] : '' %>" required>
+                    </div>
+    
+                    
+                    <div class="form-group">
+                        <label>Status:</label>
+                        <select name="status">
+                            <option value="Upcoming" <%= movie && movie.status === 'Upcoming' ? 'selected' : '' %>>Upcoming</option>
+                            <option value="In Cinema" <%= movie && movie.status === 'In Cinema' ? 'selected' : '' %>>In Cinema</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Language:</label>
+                        <input type="text" name="language" value="<%= movie ? movie.language : '' %>" required>
+                    </div>
                 </div>
-
-                <div class="form-group">
-                    <label>Ratings:</label>
-                    <input type="number" step="0.1" name="ratings" value="<%= movie ? movie.ratings : '' %>" required>
+                
+                
+                <div class="form-row">
+                    <div class="form-group edit-image">
+                        <label>Movie Image:</label>
+                        <input type="file" name="image">
+                        <% if (movie && movie.image) { %>
+                            <img src="/uploads/<%= movie.image %>" alt="Movie Image">
+                            <% } %>
+                        </div>
+                        
+                        <div class="form-group edit-image edit-back-img">
+                            <label>Background Image:</label>
+                            <input type="file" name="backgroundImage">
+                            <% if (movie && movie.backgroundImage) { %>
+                                <img src="/uploads/<%= movie.backgroundImage %>" alt="Background Image">
+                                <% } %>
+                    </div>
                 </div>
-
-                <div class="form-group">
-                    <label>Release Date:</label>
-                    <input type="date" name="releaseDate" value="<%= movie ? movie.releaseDate.toISOString().split('T')[0] : '' %>" required>
-                </div>
-
                 <div class="form-group">
                     <label>Description:</label>
-                    <textarea name="description" required><%= movie ? movie.description : '' %></textarea>
+                    <textarea rows="4" name="description" required><%= movie ? movie.description : '' %></textarea>
                 </div>
-
-                <div class="form-group">
-                    <label>Status:</label>
-                    <select name="status">
-                        <option value="Upcoming" <%= movie && movie.status === 'Upcoming' ? 'selected' : '' %>>Upcoming</option>
-                        <option value="In Cinema" <%= movie && movie.status === 'In Cinema' ? 'selected' : '' %>>In Cinema</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>Language:</label>
-                    <input type="text" name="language" value="<%= movie ? movie.language : '' %>" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Movie Image:</label>
-                    <input type="file" name="image">
-                    <% if (movie && movie.image) { %>
-                        <img src="/uploads/<%= movie.image %>" width="100" alt="Movie Image">
-                    <% } %>
-                </div>
-
-                <div class="form-group">
-                    <label>Background Image:</label>
-                    <input type="file" name="backgroundImage">
-                    <% if (movie && movie.backgroundImage) { %>
-                        <img src="/uploads/<%= movie.backgroundImage %>" width="100" alt="Background Image">
-                    <% } %>
-                </div>
-
-                <div class="form-group">
+                
+                <div class="form-group recomend-field">
                     <label>Recommended:</label>
                     <input type="checkbox" name="recommended" <%= movie && movie.recommended ? 'checked' : '' %>>
                 </div>
                 
-
-                <button type="submit"><%= movie ? "Update Movie" : "Add Movie" %></button>
+                
+                <button class="add-btn" type="submit"><%= movie ? "Update Movie" : "Add Movie" %></button>
             </form>
         </div>
-
+        
         <!-- Movie List -->
         <div class="col-6">
             <h2>All Movies</h2>

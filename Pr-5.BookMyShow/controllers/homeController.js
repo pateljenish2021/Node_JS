@@ -1,6 +1,5 @@
 const Movie = require("../models/Movie");
 
-// Show only recommended movies on homepage
 exports.getHomepage = async (req, res) => {
     try {
         let query = { recommended: true };
@@ -18,7 +17,6 @@ exports.getHomepage = async (req, res) => {
     }
 };
 
-// Show all movies
 exports.getAllMovies = async (req, res) => {
     try {
         let searchQuery = req.query.search || "";
@@ -36,7 +34,6 @@ exports.getAllMovies = async (req, res) => {
     }
 };
 
-// Show movie details
 exports.getMovieDetails = async (req, res) => {
     try {
         const movie = await Movie.findById(req.params.id);
@@ -44,7 +41,6 @@ exports.getMovieDetails = async (req, res) => {
             return res.status(404).send('Movie not found');
         }
 
-        // Format the release date
         const releaseDate = new Date(movie.releaseDate).toLocaleDateString('en-GB', {
             day: '2-digit',
             month: 'short',
