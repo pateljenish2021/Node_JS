@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="icon" href="images/favicon.png">
+    <title>All Movies near Surat - BookMyShow Surat.</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="top-header">
+                <div>
+                    <a href="/"><img src="images/bookmyshow-logo-vector.png" class="bookmyshow" alt="" ></a>
+                </div>
+                <div style="display: flex;">
+                    <div style="position: relative;">
+                        <div class="search-data" style="position: absolute; display: flex; align-items: center; top: 11px; left: 8px;">
+                            <img src="images/search.png" class="search-img" alt="">
+                        </div>
+                    </div>
+                    <form action="/all-movies" method="GET" class="search-form">
+                        <input type="text" name="search" class="search-field" placeholder="Search for Movies...." value="<%= searchQuery || '' %>">
+                        <button class="search-btn" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+            <div style="background-color: #f5f5f5;">
+                <div class="bottom-header">
+                    <div>
+                        <ul>
+                            <li style="padding-left: 0;"><a href="/all-movies" class="nav-active">Movies</a></li>
+                            <li><a href="/bookings">Your Bookings</a></li>
+                            <li><a href="/coming-soon">Events</a></li>
+                            <li><a href="/coming-soon">Plays</a></li>
+                            <li><a href="/coming-soon">Sports</a></li>
+                            <li><a href="/coming-soon">Activities</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <li style="padding-right: 0;"><a href="/admin">Upload Movie</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </header>
+    <div class="slider">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="images/swiper-1.jpg" alt=""></div>
+              <div class="swiper-slide"><img src="images/swiper-2.jpg" alt=""></div>
+              <div class="swiper-slide"><img src="images/swiper-4.jpg" alt=""></div>
+              <div class="swiper-slide"><img src="images/swiper-3.jpg" alt=""></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+    </div>
+
+    <section class="recommend-movie">
+        <div class="container">
+            <div class="recommend-heading">
+                <h2>Movies in Surat</h2>
+            </div>
+            <div class="recommend-card-wrapper">
+                <% if (movies.length === 0) { %>
+                <p>No movies found.</p>
+                <% } else { %>
+                <% movies.forEach(movie => { %>
+                <div class="recommend-card" onclick="window.location.href='/movie/<%= movie._id %>'">
+                    <img src="/uploads/<%= movie.image %>" alt="" class="recommend-movie-img">
+                    <h3 class="recommend-movie-title"><%= movie.title %></h3>
+                    <p class="recommend-movie-category"><%= movie.category %></p>
+                </div>
+                <% }); %>
+                <% } %>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <div class="line"></div>
+                <div><img src="images/footer-logo.svg" alt=""></div>
+                <div class="line"></div>
+            </div>
+            <div class="social-icons-strip">
+                <a href="https://www.facebook.com" target="_blank"><img src="images/facebook.png" alt=""></a>
+                <a href="https://www.x.com" target="_blank"><img src="images/twitter.png" alt=""></a>
+                <a href="https://www.instagram.com" target="_blank"><img src="images/instagram.png" alt=""></a>
+                <a href="https://www.youtube.com" target="_blank"><img src="images/youtube.png" alt=""></a>
+                <a href="https://www.pinterest.com" target="_blank"><img src="images/pintrest.png" alt=""></a>
+                <a href="https://www.linkedin.com" target="_blank"><img style="margin-right: 0;" src="images/linkedin.png" alt=""></a>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-text">
+                    <br>Copyright 2025 © Bigtree Entertainment Pvt. Ltd. All Rights Reserved. </br>The content and images used on this site are copyright protected and copyrights vests with the respective owners. The usage of the content and images on this website is intended to promote the works and no endorsement of the artist shall be implied. Unauthorized use is prohibited and punishable by law.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+   var swiper = new Swiper(".mySwiper", {
+      slidesPerView: "auto",
+      centeredSlides: true,
+      spaceBetween: 10,
+      loop: true,
+      autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    });
+  </script>
+</html>
