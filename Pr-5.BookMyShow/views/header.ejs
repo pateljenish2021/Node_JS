@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="top-header">
+                <div>
+                    <a href="/"><img src="images/bookmyshow-logo-vector.png" class="bookmyshow" alt="" ></a>
+                </div>
+                <div style="display: flex;">
+                    <div style="position: relative;">
+                        <div class="search-data" style="position: absolute; display: flex; align-items: center; top: 11px; left: 8px;">
+                            <img src="images/search.png" class="search-img" alt="">
+                        </div>
+                    </div>
+                    <form action="/all-movies" method="GET" class="search-form">
+                    <input type="text" name="search" class="search-field" placeholder="Search for Movies...." value="<%= searchQuery || '' %>">
+                    <button class="search-btn" type="submit">Search</button>
+                </form>
+                </div>
+            </div>
+        </div>
+            <div style="background-color: #f5f5f5;">
+                <div class="bottom-header">
+                    <div>
+                        <ul>
+                            <li style="padding-left: 0;"><a href="/all-movies">Movies</a></li>
+                            <li><a href="/bookings">Your Bookings</a></li>
+                            <li><a href="/coming-soon">Events</a></li>
+                            <li><a href="/coming-soon">Plays</a></li>
+                            <li><a href="/coming-soon">Sports</a></li>
+                            <li><a href="/coming-soon">Activities</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <li style="padding-right: 0;"><a href="/admin">Upload Movie</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </header>
+</body>
+</html>
