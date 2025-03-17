@@ -2,12 +2,8 @@ const Movie = require("../models/Movie");
 
 exports.getHomepage = async (req, res) => {
     try {
-        let query = { recommended: true };
-        let searchQuery = req.query.search || "";
-
-        if (searchQuery) {
-            query.title = { $regex: new RegExp(searchQuery, "i") };
-        }
+        const searchQuery = req.query.search || "";
+        const query = searchQuery ? { title: new RegExp(searchQuery, "i") } : {};
 
         const movies = await Movie.find(query);
         res.render("index", { movies, searchQuery });
@@ -19,12 +15,8 @@ exports.getHomepage = async (req, res) => {
 
 exports.getAllMovies = async (req, res) => {
     try {
-        let searchQuery = req.query.search || "";
-        let query = {};
-
-        if (searchQuery) {
-            query.title = { $regex: new RegExp(searchQuery, "i") };
-        }
+        const searchQuery = req.query.search || "";
+        const query = searchQuery ? { title: new RegExp(searchQuery, "i") } : {};
 
         const movies = await Movie.find(query);
         res.render("allMovies", { movies, searchQuery });
@@ -37,20 +29,18 @@ exports.getAllMovies = async (req, res) => {
 exports.getMovieDetails = async (req, res) => {
     try {
         const movie = await Movie.findById(req.params.id);
-        if (!movie) {
-            return res.status(404).send('Movie not found');
-        }
+        if (!movie) return res.status(404).send("Movie not found");
 
-        const releaseDate = new Date(movie.releaseDate).toLocaleDateString('en-GB', {
-            day: '2-digit',
-            month: 'short',
-            year: 'numeric'
+        const releaseDate = new Date(movie.releaseDate).toLocaleDateString("en-GB", {
+            day: "2-digit",
+            month: "short",
+            year: "numeric"
         });
 
-        res.render('movie', { movie, releaseDate });
+        res.render("movie", { movie, releaseDate });
     } catch (error) {
         console.error(error);
-        res.status(500).send('Error fetching movie details');
+        res.status(500).send("Error fetching movie details");
     }
 };
 
