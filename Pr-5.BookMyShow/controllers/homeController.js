@@ -3,7 +3,11 @@ const Movie = require("../models/Movie");
 exports.getHomepage = async (req, res) => {
     try {
         const searchQuery = req.query.search || "";
-        const query = searchQuery ? { title: new RegExp(searchQuery, "i") } : {};
+        const query = { recommended: true }; 
+
+        if (searchQuery) {
+            query.title = new RegExp(searchQuery, "i"); 
+        }
 
         const movies = await Movie.find(query);
         res.render("index", { movies, searchQuery });
@@ -12,6 +16,7 @@ exports.getHomepage = async (req, res) => {
         res.status(500).send("Error fetching movies");
     }
 };
+
 
 exports.getAllMovies = async (req, res) => {
     try {

@@ -14,10 +14,12 @@ exports.getAllMovies = async (req, res) => {
 
 exports.addMovie = async (req, res) => {
     try {
-        const { title, category, duration, ratings, releaseDate, description, status, language, recommended } = req.body;
+        const { title, category, duration, ratings, releaseDate, description, status, language } = req.body;
 
         const image = req.files["image"] ? req.files["image"][0].filename : "";
         const backgroundImage = req.files["backgroundImage"] ? req.files["backgroundImage"][0].filename : "";
+
+        const recommended = req.body.recommended ? true : false; 
 
         const newMovie = new Movie({
             title,
@@ -30,7 +32,7 @@ exports.addMovie = async (req, res) => {
             description,
             status,
             language,
-            recommended: recommended === "on"
+            recommended
         });
 
         await newMovie.save();
@@ -40,6 +42,7 @@ exports.addMovie = async (req, res) => {
         res.status(500).send("Error adding movie");
     }
 };
+
 
 exports.getMovieForEdit = async (req, res) => {
     try {
@@ -54,7 +57,9 @@ exports.getMovieForEdit = async (req, res) => {
 
 exports.updateMovie = async (req, res) => {
     try {
-        const { title, category, duration, ratings, releaseDate, description, status, language, recommended } = req.body;
+        const { title, category, duration, ratings, releaseDate, description, status, language } = req.body;
+
+        const recommended = req.body.recommended ? true : false; // ✅ Fix
 
         const updateData = {
             title,
@@ -65,7 +70,7 @@ exports.updateMovie = async (req, res) => {
             description,
             status,
             language,
-            recommended: recommended === "on"
+            recommended
         };
 
         if (req.files["image"]) {
@@ -82,6 +87,7 @@ exports.updateMovie = async (req, res) => {
         res.status(500).send("Error updating movie");
     }
 };
+
 
 exports.deleteMovie = async (req, res) => {
     try {
