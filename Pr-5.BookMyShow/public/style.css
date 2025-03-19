@@ -179,6 +179,7 @@
   margin-top: 4px;
   font-weight: 500;
   margin-bottom: 4px;
+  text-transform: capitalize;
 }
 .recommend-movie-category {
   font-size: 16px;
