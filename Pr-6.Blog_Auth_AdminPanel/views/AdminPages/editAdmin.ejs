@@ -1,0 +1,128 @@
+<%- include('../Layout/header'); %>
+
+<div class="page-wrapper">
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+                <h4 class="page-title">Edit Admin</h4>
+                <div class="ml-auto text-right">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Edit Admin</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <form class="form-horizontal" action="/admin/update-admin/<%= admin._id %>" method="POST" enctype="multipart/form-data">
+
+                        <div class="card-body">
+                            <h4 class="card-title">Personal Info</h4>
+
+                            <div class="form-group row">
+                                <label for="fname" class="col-sm-3 text-right control-label col-form-label">First Name</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="fname" name="firstname" value="<%= admin.firstname %>" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="lname" class="col-sm-3 text-right control-label col-form-label">Last Name</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="lname" name="lastname" value="<%= admin.lastname %>" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="email" class="col-sm-3 text-right control-label col-form-label">Email</label>
+                                <div class="col-sm-9">
+                                    <input type="email" class="form-control" id="email" name="email" value="<%= admin.email %>" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 text-right control-label col-form-label">Gender</label>
+                                <div class="col-md-9">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" class="custom-control-input" id="genderMale" name="gender" value="male" 
+                                        <%= (admin.gender && admin.gender.trim().toLowerCase() === 'male') ? 'checked' : '' %>>
+                                        <label class="custom-control-label" for="genderMale">Male</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" class="custom-control-input" id="genderFemale" name="gender" value="female" 
+                                        <%= (admin.gender && admin.gender.trim().toLowerCase() === 'female') ? 'checked' : '' %>>
+                                        <label class="custom-control-label" for="genderFemale">Female</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 text-right control-label col-form-label">Hobbies</label>
+                                <div class="col-md-9">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="hobbyTravelling" name="hobbies" value="Travelling" 
+                                        <%= admin.hobbies.includes("Travelling") ? "checked" : "" %>>
+                                        <label class="custom-control-label" for="hobbyTravelling">Travelling</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="hobbyGaming" name="hobbies" value="Gaming" 
+                                        <%= admin.hobbies.includes("Gaming") ? "checked" : "" %>>
+                                        <label class="custom-control-label" for="hobbyGaming">Gaming</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="hobbyCooking" name="hobbies" value="Cooking" 
+                                        <%= admin.hobbies.includes("Cooking") ? "checked" : "" %>>
+                                        <label class="custom-control-label" for="hobbyCooking">Cooking</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 text-right control-label col-form-label">Profile Picture</label>
+                                <div class="col-md-9">
+                                    <% if (admin.image) { %>
+                                        <img src="/uploads/<%= admin.image %>" id="profilePreview" width="100" height="100" class="rounded-circle mb-2">
+                                    <% } else { %>
+                                        <img src="/images/default-avatar.png" id="profilePreview" width="100" height="100" class="rounded-circle mb-2">
+                                    <% } %>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="imageUpload" name="image" onchange="previewImage(event)">
+                                        <label class="custom-file-label" for="imageUpload">Choose file...</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="border-top">
+                            <div class="card-body">
+                                <button type="submit" class="btn btn-primary">Update Admin</button>
+                                <a href="/admin/view-admin" class="btn btn-secondary">Cancel</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%- include('../Layout/footer'); %>
+
+<script>
+    function previewImage(event) {
+        const reader = new FileReader();
+        reader.onload = function () {
+            document.getElementById('profilePreview').src = reader.result;
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    }
+</script>
