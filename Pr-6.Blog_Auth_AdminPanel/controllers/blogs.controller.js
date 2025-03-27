@@ -24,10 +24,6 @@ exports.postAddBlog = async (req, res) => {
         const { title, description, author, category } = req.body;
         const image = req.file ? "/uploads/" + req.file.filename : null;
 
-        if (!title || !description || !author || !category || !image) {
-            return res.send("All fields are required.");
-        }
-
         try {
             const newBlog = new Blog({ title, description, author, category, image });
             await newBlog.save();
@@ -49,12 +45,25 @@ exports.getAllBlogsPage = async (req, res) => {
 
 exports.getViewBlogPage = async (req, res) => {
     try {
-        const blogs = await Blog.find();
-        res.render("BlogPages/viewBlogs", { blogs });
+        const { search, category } = req.query;
+
+        let filter = {};
+
+        if (search) {
+            filter.title = { $regex: search, $options: "i" };
+        }
+
+        if (category) {
+            filter.category = category; 
+        }
+
+        const blogs = await Blog.find(filter);
+        res.render("BlogPages/viewBlogs", { blogs, searchQuery: search, selectedCategory: category });
     } catch (error) {
         res.send("Error fetching blogs.");
     }
 };
+
 
 exports.getSingleBlogPage = async (req, res) => {
     try {
