@@ -11,13 +11,13 @@ router.use((req, res, next) => {
 
 // Routes
 router.get("/add-admin", adminController.getAddAdminPage);
-router.post("/add-admin", adminController.postAddAdmin);
 router.get("/view-admin", adminController.getViewAdminPage);
 router.get("/edit-admin/:id", adminController.getEditAdminPage);
-router.post("/update-admin/:id", adminController.postUpdateAdmin);
 router.get("/delete-admin/:id", adminController.deleteAdmin);
-
-router.get("/view-profile", adminController.getViewProfile);
 router.get("/logout", adminController.logoutAdmin);
+router.get("/view-profile", adminController.getViewProfile);
+
+router.post("/add-admin", adminController.postAddAdmin);
+router.post("/update-admin/:id", adminController.postUpdateAdmin);
 
 module.exports = router;
