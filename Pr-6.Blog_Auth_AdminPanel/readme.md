@@ -1,4 +1,4 @@
-# Admin Creditional 
+## Admin Credential
 
-** Email ** : jenish@gmail.com
-** Password ** : 12345 
+**Email** : jenish@gmail.com </br>
+**Password** : 12345 
